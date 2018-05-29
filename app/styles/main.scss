@@ -1,6 +1,8 @@
 // bower:scss
 // endbower
 
+@import 'variables';
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -17,15 +19,94 @@ body {
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h4, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 6em;
+}
+
+h2 {
+  font-size: 2.6em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+
 .hero {
   position: relative;
   height: 100vh;
   background-image: url('/images/cannon-beach.jpg');
 }
 
+.main {
+  margin: 25px;
+}
+
 .resume {
   // TODO: remove
   height: 100vh;
+  h2 {
+    display: inline-block;
+  }
+}
+
+.resume__inner {
+  margin: 12px;
+}
+
+.resume__header {
+  cursor: pointer;
+  font-size: 2em;
+  padding: 22px;
+}
+
+#resume--skills {
+  .resume__header {
+    background-color: $color-cornflower-blue;
+  }
+}
+
+#resume--employment {
+  .resume__header {
+    background-color: $color-almond;
+  }
+}
+
+#resume--projects {
+  .resume__header {
+    background-color: $color-nutmeg;
+  }
+}
+
+#resume--education {
+  .resume__header {
+    background-color: $color-pale-leaf;
+  }
+}
+
+.resume__details {
+  text-align: center;
+  opacity: 1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s;
+  > div {
+    padding: 18px;
+  }
+}
+
+.resume__list {
+  font-size: 1.2em;
+  li {
+    display: inline-block;
+    text-decoration: underline;
+
+  }
 }
 
 .hero__link {
@@ -36,13 +117,11 @@ body {
 
 .greeting {
   position: absolute;
+  text-align: center;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   color: #3b3a36;
-  h1 {
-    font-size: 3em;
-  }
 }
 
 /*
