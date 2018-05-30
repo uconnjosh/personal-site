@@ -90,22 +90,29 @@ h3 {
 }
 
 .resume__details {
-  text-align: center;
   opacity: 1;
   max-height: 0;
   overflow: hidden;
   transition: max-height .4s;
-  > div {
-    padding: 18px;
-  }
 }
+
+.resume__detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.detail__list {
+  margin-left: 40px;
+}
+
 
 .resume__list {
   font-size: 1.2em;
+  margin: 0 auto;
   li {
     display: inline-block;
-    text-decoration: underline;
-
+    margin: 8px;
   }
 }
 

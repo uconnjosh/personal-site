@@ -37,5 +37,5 @@ var toggleResumeSection = (section) => {
 	  return	
 	}
 
-  section.css('max-height', '200px');
+  section.css('max-height', '1000px');
 }
