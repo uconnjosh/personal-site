@@ -3,26 +3,18 @@ $(document).ready(function() {
   addClickListeners()
 })
 
- var addScrollListener = () => {
-	const josh = $('#greeting__josh')
-	const paul = $('#greeting__paul')
+var addScrollListener = () => {
+	const heroImg = $('#hero__image');
   $(document).on("scroll", function() {
-  	let scrollPosition = $(document).scrollTop()
-  	let _css = scrollPosition + 'px'
+    let scrollPosition = $(document).scrollTop()
+    let newOpacity = 1 - (scrollPosition / 700)
     
-    josh.css({'margin-right': _css})
-    paul.css({'margin-left': _css})
+    heroImg.css({'opacity': newOpacity})
   })
 }
 
-
-// $('#resume--skills').children().find('.resume__section')
 var addClickListeners = () => {	
 	const resumeSection = $('.resume__section')
-  // const resumeSkills = $('#resume--skills')
-  // const resumeEmployment = $('#resume--employment')
-  // const resumeProjects = $('#resume--projects')
-  // const resumeEducation = $('#resume--education')
 
   resumeSection.on('click', function() {
   	const section = $(this).find('.resume__details').first()

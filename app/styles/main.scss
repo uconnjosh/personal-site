@@ -40,7 +40,16 @@ h3 {
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('/images/cannon-beach.jpg');
+  background-color: $color-sand;
+}
+
+#hero__image {
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/cannon-beach.jpg");
+  background-size: cover;
+  backgournd-repeat: no-repeat;
+  background-position: center;
 }
 
 .main {
