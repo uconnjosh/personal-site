@@ -40,7 +40,9 @@ h3 {
 .hero {
   position: relative;
   height: 100vh;
+  width: 100%;
   background-color: $color-sand;
+  color: #3b3a36;
 }
 
 #hero__image {
@@ -125,36 +127,19 @@ h3 {
   }
 }
 
-.hero__link {
-  color: #3b3a36;
-  text-align: center;
-  font-size: 1.5em;
-}
-
 .greeting {
   position: absolute;
   text-align: center;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  color: #3b3a36;
+  transform: translateX(-50%) translateY(-50%); 
 }
 
-/*
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+.header__name {
+  position: absolute;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  transition: opacity .8s ease-in;
 }
-*/
-
