@@ -40,6 +40,17 @@ a {
   text-decoration: none;
 }
 
+.screen {
+  @media print {
+    display: none;
+  }
+}
+
+.print {
+  @media screen {
+    display: none;
+  }
+}
 
 .hero {
   position: relative;
@@ -125,6 +136,12 @@ a {
   cursor: pointer;
   font-size: 2em;
   padding: 22px;
+  @media print {
+    background-color: white;
+    font-size: 1em;
+    padding: 0;
+    font-style: italic;
+  }
 }
 
 #resume--skills {
@@ -156,6 +173,16 @@ a {
   max-height: 0;
   overflow: hidden;
   transition: max-height .4s;
+  @media print {
+    max-height: 10000px;
+  }
+}
+
+.resume__title {
+  text-align: center;
+  p {
+    margin: 4px;
+  }
 }
 
 .resume__detail {
