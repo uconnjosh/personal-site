@@ -36,6 +36,10 @@ h3 {
   font-size: 2em;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 .hero {
   position: relative;
@@ -53,6 +57,21 @@ h3 {
   backgournd-repeat: no-repeat;
   background-position: center;
 }
+
+.hero__social {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  a {
+    margin: 0 4px;
+    vertical-align: middle;
+    img {
+      width: 46px;
+    }
+  }
+}
+
+
 
 .main {
   margin: 25px;
@@ -72,6 +91,17 @@ h3 {
   display: flex;
   align-content: space-between;
   align-items: center;
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    > div {
+      width: 90%;
+    }
+  }
+}
+
+.contact__icon {
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
 .about__text {
@@ -163,4 +193,9 @@ h3 {
   transform: translateX(-50%);
   bottom: 1vh;
   transition: opacity .8s ease-in;
+  @media screen and (max-height: 418px) {
+    h2 {
+      font-size: 1.4em;  
+    }
+  }
 }

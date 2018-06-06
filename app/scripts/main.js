@@ -29,7 +29,7 @@ var stickyHeader = () => {
   const hero = $('.hero')
   const headerName = $('.header__name')
 
-  hero.css({'position': ' sticky', 'top': '-85vh'})
+  hero.css({'position': 'sticky', 'top': '-90vh'})
   headerName.css({'opacity': '1'})
   headerVisible = true
 }
