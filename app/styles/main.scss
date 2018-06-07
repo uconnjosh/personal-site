@@ -100,7 +100,7 @@ a {
 
 .section__about {
   display: flex;
-  align-content: space-between;
+  justify-content: space-between;
   align-items: center;
   @media screen and (max-width: 650px) {
     flex-direction: column;
@@ -173,6 +173,9 @@ a {
   max-height: 0;
   overflow: hidden;
   transition: max-height .4s;
+  a {
+    color: black;
+  }
   @media print {
     max-height: 10000px;
   }

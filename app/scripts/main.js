@@ -45,10 +45,15 @@ var unStickHeader = () => {
 
 var addClickListeners = () => {	
 	const resumeSection = $('.resume__section')
+	const resumeDetails = $('.resume__details')
 
   resumeSection.on('click', function() {
   	const section = $(this).find('.resume__details').first()
   	toggleResumeSection(section)
+  })
+
+  resumeDetails.on('click', function(e) {
+  	e.stopPropagation()
   })
 }
 
