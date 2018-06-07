@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 var addScrollListener = () => {
 	const heroImg = $('#hero__image');
-  $(document).on("scroll", function() {
+  $(document).on('scroll', function() {
     let scrollPercentage = $(document).scrollTop() / heroImg.height()
     let newOpacity = 1 - (scrollPercentage)
 
