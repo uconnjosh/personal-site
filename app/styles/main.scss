@@ -19,7 +19,7 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h4, ul, li {
+h1, h2, h3, h4, h4, ul, li, p {
   margin: 0;
   padding: 0;
 }
@@ -182,13 +182,11 @@ a {
   a {
     color: black;
   }
-  @media print {
-    max-height: 10000px;
-  }
 }
 
 .resume__title {
   text-align: center;
+  padding-bottom: 1.4em;
   p {
     margin: 4px;
   }
@@ -202,6 +200,12 @@ a {
 
 .detail__list {
   margin-left: 40px;
+}
+
+.detail__description {
+  p {
+    padding-bottom: 1em;
+  }
 }
 
 
