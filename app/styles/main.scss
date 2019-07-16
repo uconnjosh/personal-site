@@ -19,10 +19,10 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h4, ul, li, p {
-  margin: 0;
-  padding: 0;
-}
+// h1, h2, h3, h4, h4, ul, li, p {
+//   margin: 0;
+//   padding: 0;
+// }
 
 h1 {
   font-size: 6em;
@@ -59,8 +59,8 @@ a {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: $color-sand;
-  color: #3b3a36;
+  background-color: #dfe6e9;
+  color: #2d3436;
 }
 
 #hero__image {
@@ -178,7 +178,7 @@ a {
   opacity: 1;
   max-height: 0;
   overflow: hidden;
-  transition: max-height .4s;
+  transition: max-height 1s;
   a {
     color: black;
   }
@@ -220,10 +220,33 @@ a {
 
 .greeting {
   position: absolute;
-  text-align: center;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%); 
+  top: 50%;
+  left: 12%;
+  transform: translateY(-50%);
+  transition: opacity 1s;
+  > h2 {
+    display: flex;
+  }
+  @media screen and (max-width: 500px) {
+    left: 4%;
+    > h2 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.greeting__label {
+  display: flex;
+  justify-content: space-between;
+  min-width: 110px;
+  margin-right: 10px;
+  @media screen and (max-width: 500px) {
+    min-width: 66px;
+  }
+}
+
+.interactive {
+  cursor: pointer;
 }
 
 .header__name {
@@ -238,4 +261,42 @@ a {
       font-size: 1.4em;  
     }
   }
+}
+
+.hero {
+  &.hover-who {
+    .polaroid {
+      opacity: 1;
+    }
+    .greeting {
+      opacity: 0;
+    }
+  }
+}
+.polaroid {
+  position: absolute;
+  width: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s;
+}
+ 
+.polaroid img {
+  width: 100%;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+ 
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
 }
