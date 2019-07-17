@@ -3,12 +3,6 @@
 
 @import 'variables';
 
-@mixin retina {
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-    @content;
-  }
-}
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -25,10 +19,10 @@ body {
   box-sizing: border-box;
 }
 
-// h1, h2, h3, h4, h4, ul, li, p {
-//   margin: 0;
-//   padding: 0;
-// }
+h1, h2, h3, h4, h4, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
 
 h1 {
   font-size: 6em;
@@ -49,10 +43,6 @@ a {
   }
 }
 
-.spacer-square {
-  padding-bottom: 100%;
-}
-
 .screen {
   @media print {
     display: none;
@@ -69,13 +59,8 @@ a {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: #dfe6e9;
-  color: #2d3436;
-  &.portfolio-open {
-    .hero__portfolio {
-      transform: translateX(0);
-    }
-  }
+  background-color: $color-sand;
+  color: #3b3a36;
 }
 
 #hero__image {
@@ -193,7 +178,7 @@ a {
   opacity: 1;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s;
+  transition: max-height .4s;
   a {
     color: black;
   }
@@ -235,33 +220,10 @@ a {
 
 .greeting {
   position: absolute;
-  top: 50%;
-  left: 12%;
-  transform: translateY(-50%);
-  transition: opacity 1s;
-  > h2 {
-    display: flex;
-  }
-  @media screen and (max-width: 500px) {
-    left: 4%;
-    > h2 {
-      font-size: 1.2rem;
-    }
-  }
-}
-
-.greeting__label {
-  display: flex;
-  justify-content: space-between;
-  min-width: 110px;
-  margin-right: 10px;
-  @media screen and (max-width: 500px) {
-    min-width: 66px;
-  }
-}
-
-.interactive {
-  cursor: pointer;
+  text-align: center;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%); 
 }
 
 .header__name {
@@ -277,114 +239,3 @@ a {
     }
   }
 }
-
-.hero__about {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  &.hover-who {
-    .polaroid {
-      opacity: 1;
-    }
-    .greeting {
-      opacity: 0;
-    }
-  }
-}
-.hero__portfolio {
-  position: absolute;
-  background-color: #dfe6e9;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  transform: translateX(100%);
-  transition: transform 1s;
-  &.preview-open {
-    .portfolio {
-      opacity: 0;
-    }
-    .portfolio__preview {
-      opacity: 1;
-    }
-  }
-}
-
-.polaroid {
-  position: absolute;
-  width: 220px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 1s;
-}
- 
-.polaroid img {
-  width: 100%;
-  border: 10px solid #fff;
-  border-bottom: 45px solid #fff;
-  -webkit-box-shadow: 3px 3px 3px #777;
-     -moz-box-shadow: 3px 3px 3px #777;
-          box-shadow: 3px 3px 3px #777;
-}
- 
-.polaroid p {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  bottom: 0px;
-  font: 400 18px/1 'Kaushan Script', cursive;
-  color: #888;
-}
-
-.portfolio {
-  display: flex;
-  max-width: 1200px;
-  padding: 6rem 4rem;
-  transition: opacity 1s;
-  > div {
-    position: relative;
-    width: 30%;
-  }
-}
-
-.porfolio__image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.portfolio__preview {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 4rem;
-  top: 50%;
-  left: 50%;
-  width: 80vw;
-  heigth: 80vh;
-  height: 80vh;
-  transform: translate(-50%, -50%);
-  border: none;
-  opacity: 0;
-  transition: opacity 1s;
-  > iframe {
-    border: 0;
-  }
-}
-
-.icon-arrow-back {
-  background-image: url('images/arrow-back.png');
-  @include retina {
-    background-image: url('images/arrow-back@2x.png');
-  }
-}
-
