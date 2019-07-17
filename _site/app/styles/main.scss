@@ -1,0 +1,241 @@
+// bower:scss
+// endbower
+
+@import 'variables';
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  background: #fafafa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+  font-size: 12px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h4, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 6em;
+}
+
+h2 {
+  font-size: 2.6em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: blue;
+  }
+}
+
+.screen {
+  @media print {
+    display: none;
+  }
+}
+
+.print {
+  @media screen {
+    display: none;
+  }
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: $color-sand;
+  color: #3b3a36;
+}
+
+#hero__image {
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/cannon-beach.jpg");
+  background-size: cover;
+  backgournd-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero__social {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  a {
+    margin: 0 4px;
+    vertical-align: middle;
+    img {
+      width: 30px;
+    }
+  }
+}
+
+
+
+.main {
+  margin: 25px;
+}
+
+.resume {
+  h2 {
+    display: inline-block;
+  }
+}
+
+.section__inner {
+  margin: 12px;
+}
+
+.section__about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    > div {
+      width: 90%;
+    }
+  }
+}
+
+.contact__icon {
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.about__text {
+  width: 70%;
+  > p {
+   font-size: 1.4em;
+  }
+}
+
+.about__pic {
+  width: 25%;
+  img {
+    width: 100%;
+  }
+}
+
+.avatar-pic {
+  float: left;
+  width: 75px;
+  border-radius: 500px;
+}
+
+.resume__header {
+  cursor: pointer;
+  font-size: 2em;
+  padding: 22px;
+  @media print {
+    background-color: white;
+    font-size: 1em;
+    padding: 0;
+    font-style: italic;
+  }
+}
+
+#resume--skills {
+  .resume__header {
+    background-color: $color-cornflower-blue;
+  }
+}
+
+#resume--employment {
+  .resume__header {
+    background-color: $color-almond;
+  }
+}
+
+#resume--projects {
+  .resume__header {
+    background-color: $color-nutmeg;
+  }
+}
+
+#resume--education {
+  .resume__header {
+    background-color: $color-pale-leaf;
+  }
+}
+
+.resume__details {
+  opacity: 1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s;
+  a {
+    color: black;
+  }
+}
+
+.resume__title {
+  text-align: center;
+  padding-bottom: 1.4em;
+  p {
+    margin: 4px;
+  }
+}
+
+.resume__detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.detail__list {
+  margin-left: 40px;
+}
+
+.detail__description {
+  p {
+    padding-bottom: 1em;
+  }
+}
+
+
+.resume__list {
+  font-size: 1.2em;
+  margin: 0 auto;
+  li {
+    display: inline-block;
+    margin: 8px;
+  }
+}
+
+.greeting {
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.header__name {
+  position: absolute;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1vh;
+  transition: opacity .8s ease-in;
+  @media screen and (max-height: 418px) {
+    h2 {
+      font-size: 1.4em;  
+    }
+  }
+}
