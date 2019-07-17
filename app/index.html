@@ -15,7 +15,7 @@
     <!-- endbuild -->
 
     	
-    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Noto+Serif+JP&display=swap" rel="stylesheet">
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -61,10 +61,10 @@
             <div>
               <div class="resume__detail">
                 <div class="detail__description">
-                  <p>Josh Paul Web Solutions <strong>Los Angeles, CA</strong> | Lead developer</p>
-                  <!-- <ul class="detail__list">
-                    <li>Shopify</li>
-                  </ul> -->
+                  <p>Contract Web Developer, <strong>Los Angeles, CA</strong></p>
+                  <ul class="detail__list">
+                    <li>Developed and launched successful e-commerce website</li>
+                  </ul>
                 </div>
                 <div class="detail__date">
                   June 2019 - Present
@@ -72,7 +72,7 @@
               </div>
               <div class="resume__detail">
                 <div class="detail__description">
-                  <p>BOND Creative, <strong>Los Angeles, CA</strong> | Front end web developer</p>
+                  <p>BOND Creative, <strong>Los Angeles, CA</strong> | Front End Web Developer</p>
                   <ul class="detail__list">
                     <li>BOND is a digital agency in Hollywood</li>
                     <li>Front-end development for a variety of projects using AngularJS</li>
@@ -92,7 +92,7 @@
                   <ul class="detail__list">
                     <li>Developed front-end applications using Ember.js</li>
                     <li>Developed APIs (Rails and some .NET) according to the JSON API specification</li>
-                    <li>Implemented tests use RSpec</li>
+                    <li>Implemented unit and integration tests</li>
                     <li>Provided real-time bug fixes for technical support team</li>
                   </ul>
                 </div>
@@ -148,8 +148,7 @@
                 <div class="detail__description">
                   <p><strong>University of Connecticut, Storrs, CT</strong> | Bachelor of Science in Business</p>
                   <ul class="detail__list">
-                    <li>Major: Finance, Minor: Economics, GPA: 3.56/4.00</li>
-                    <li>Senator in Undergraduate Student Government</li>
+                    <li>Major: Finance, Minor: Economics</li>
                   </ul>
                 </div>
                 <div class="detail__date">
@@ -166,12 +165,23 @@
         <div class="hero__about">
           <div class="hero__social">
 
-            <a
-              href="javascript:window.print()"
-              class="resume-print-button"
-            >
-              print résumé
-            </a>
+            <div class="resume-print-button">
+              <a
+                href="javascript:window.print()"
+                class="resume-option"
+              >
+                print
+              </a>
+              /
+              <a
+                download
+                class="resume-option"
+                href="/files/resume.pdf"
+              >
+                download
+              </a>
+              résumé
+            </div>
 
             <a 
               href="https://github.com/uconnjosh"
@@ -191,7 +201,7 @@
 
           <div class="greeting">
 
-            <h2 class="interactive js-greeting-who">
+            <div class="interactive js-greeting-who">
               <div class="greeting__label">
 
                 <div>
@@ -203,19 +213,19 @@
                 </div>
               </div>
               Josh Paul &nbsp; &nbsp;
-              <div class="flex flex-align-center">
+              <div class="flex flex-align-center color-blue">
 
                 <img
                   src="/images/arrow-forward.svg"
                   class="arrow-forward"
                 />
 
-                <div>(bio)</div>
+                <div class="mobile-hidden">(bio)</div>
 
               </div>
-            </h2>
+            </div>
 
-            <h2 class="interactive js-greeting-what">
+            <div class="interactive js-greeting-what">
               <div class="greeting__label">
 
                 <div>
@@ -227,19 +237,19 @@
                 </div>
               </div>
               Freelance Web Developer &nbsp; &nbsp;
-              <div class="flex flex-align-center">
+              <div class="flex flex-align-center color-blue">
 
                 <img
                   src="/images/arrow-forward.svg"
                   class="arrow-forward"
                 />
 
-                <div>(portfolio)</div>
+                <div class="mobile-hidden">(portfolio)</div>
 
               </div>
-            </h2>
+            </div>
 
-            <h2>
+            <div>
               <div class="greeting__label">
                 <div>
                   Where
@@ -250,9 +260,9 @@
                 </div>
               </div>
               Los Angeles and Connecticut
-            </h2>
+            </div>
 
-            <h2>
+            <div>
               <div class="greeting__label">
                 <div>
                   When
@@ -267,11 +277,12 @@
 
               <a
                 href="mailto:josh4044@gmail.com"
+                class=""
                 style="margin-left: 6px;"
               >
                 Get in touch!
               </a>
-            </h2>
+            </div>
           </div>
           <div class="header__name">
             <h2>Josh Paul</h2>
@@ -342,12 +353,12 @@
             <p class="bio-text">
               I'm a freelance web developer, based in sunny Los Angeles, but I also tend to spend a lot of time with family in woodsy Connecticut.
               The world of freelancing is relatively new to me, but the world of web development is not. Before deciding to go contract, I worked for five years in software development/engineering
-              roles in Portland, OR and Los Angeles. In this business, constant learning is key, but the most valuable lesson I've learned  so far is to embrace simplicity. I think the key to a successful project is choosing
-              the simplest technology stack that'll meet the visual and technical requirements of the project. That might mean Rails, a frontend JavaScript framework like Ember or Angular.js, or maybe even just plain old HTML and CSS with some JQuery.
-              I really believe that choosing a stack that's just complex <i>enough</i> is the key to reducing overall costs and shortening time to completion.
+              roles in Portland, OR and Los Angeles. In this business, constant learning is a given, but the most valuable lesson I've learned  so far is to embrace simplicity.
+              I enjoy working with technologies that will yield the end result in a timely manner, and at a low cost. Doing this involves choosing a tech stack that's just right
+              for your project, nothing more and nothing less. 
               <br />
               <br />
-              So if you've got a project that need to be done in a timely manner, be it a website or application, let's talk! I'd love to help.
+              So let's figure out whether your project requires something like Rails, a frontend JavaScript framework like Ember or Angular.js, or maybe even just a static site with some JQuery, and get to work!
             </p>
 
         </div>

@@ -1,11 +1,29 @@
 $(document).ready(function() {
+	route()
   $('.js-greeting-what').click(() => {
-    $('.js-hero-portfolio').addClass('transform-0')
+  	window.location.hash = 'portfolio';
   })
   $('.js-greeting-who').click(() => {
-    $('.js-bio').addClass('transform-0')
+  	window.location.hash = 'bio';
   })
   $('.js-back').click(() => {
-    $('.hero__details').removeClass('transform-0')
+  	window.location.hash = '';
   })
+  $(window).on('hashchange', function (e) {
+  	route();
+	});
+	function route() {
+		const hash = window.location.hash
+  	
+  	switch(hash) {
+		  case '#portfolio':
+		   	$('.js-hero-portfolio').addClass('transform-0')
+		    break;
+		  case '#bio':
+		    $('.js-bio').addClass('transform-0')
+		    break;
+		  default:
+		  	$('.hero__details').removeClass('transform-0')
+		}
+	}
 })

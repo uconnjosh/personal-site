@@ -24,11 +24,14 @@
 
 body {
   background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Noto Serif JP', serif;
   color: #333;
   font-size: 12px;
   margin: 0;
   box-sizing: border-box;
+  @include mobile {
+    font-size: 8px;
+  }
 }
 
 // h1, h2, h3, h4, h4, ul, li, p {
@@ -55,6 +58,12 @@ a {
   }
 }
 
+.mobile-hidden {
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+}
+
 .flex {
   display: flex;
 }
@@ -67,6 +76,9 @@ a {
   cursor: pointer;
 }
 
+.color-blue {
+  color: blue;
+}
 
 .spacer-square {
   padding-bottom: 100%;
@@ -106,7 +118,7 @@ a {
   align-items: center;
   top: 16px;
   right: 16px;
-  a {
+  > * {
     margin: 0 8px;
     vertical-align: middle;
     img {
@@ -114,8 +126,6 @@ a {
     }
   }
 }
-
-
 
 .main {
   margin: 25px;
@@ -168,10 +178,14 @@ a {
   border-radius: 500px;
 }
 
+.resume__section {
+  margin-bottom: .5cm;
+}
+
 .resume__header {
   cursor: pointer;
   font-size: 2em;
-  padding: 22px;
+  padding-bottom: .2cm;
   @media print {
     background-color: white;
     font-size: 1em;
@@ -225,16 +239,19 @@ a {
 .resume__detail {
   display: flex;
   justify-content: space-between;
-  padding: 12px;
+  align-items: flex-start;
+  padding: 6px;
 }
 
-.detail__list {
-  margin-left: 40px;
+.resume-option {
+  display: inline;
+  text-decoration: underline;
+  margin: 0;
 }
 
 .detail__description {
   p {
-    padding-bottom: 1em;
+    margin-top: 0;
   }
 }
 
@@ -254,10 +271,20 @@ a {
   left: 12%;
   transform: translateY(-50%);
   transition: opacity 1s;
-  > h2 {
+  > * {
+    font-size: 2rem;
+    margin-bottom: 1rem;
     display: flex;
+    align-items: center;
+    @include mobile {
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
   }
   @include mobile {
+    position: static;
+    transform: none;
+    padding: 90px 18px 0 18px;
     left: 4%;
     > h2 {
       font-size: 1.2rem;
@@ -297,7 +324,7 @@ a {
   position: fixed;
   z-index: 2;
   background-color: white;
-  padding: 2.2rem 0 2.2rem 4rem;
+  padding: 2.2rem 0 2.2rem 1rem;
   cursor: pointer;
 }
 
@@ -335,6 +362,10 @@ a {
     height: 100vh;
     overflow: auto;
     padding: 6rem 5rem 0 5rem;
+    @include mobile {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
   }
 }
 
@@ -455,5 +486,7 @@ a {
   font-size: 1rem;
   border-style: solid;
   border-width: thin;
-  padding: 4px;
+  border-color: blue;
+  color: blue;
+  padding: 6px;
 }
