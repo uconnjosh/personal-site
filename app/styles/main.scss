@@ -9,6 +9,12 @@
   }
 }
 
+@mixin mobile {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -49,6 +55,11 @@ a {
   }
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
 .spacer-square {
   padding-bottom: 100%;
 }
@@ -65,12 +76,19 @@ a {
   }
 }
 
+.typical-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .hero {
   position: relative;
   height: 100vh;
   width: 100%;
   background-color: #dfe6e9;
   color: #2d3436;
+  overflow: hidden;
   &.portfolio-open {
     .hero__portfolio {
       transform: translateX(0);
@@ -242,7 +260,7 @@ a {
   > h2 {
     display: flex;
   }
-  @media screen and (max-width: 500px) {
+  @include mobile {
     left: 4%;
     > h2 {
       font-size: 1.2rem;
@@ -255,7 +273,7 @@ a {
   justify-content: space-between;
   min-width: 110px;
   margin-right: 10px;
-  @media screen and (max-width: 500px) {
+  @include mobile {
     min-width: 66px;
   }
 }
@@ -276,6 +294,11 @@ a {
       font-size: 1.4em;  
     }
   }
+}
+
+.header__back {
+  cursor: pointer;
+  margin-bottom: 4rem;
 }
 
 .hero__about {
@@ -302,6 +325,9 @@ a {
   left: 0;
   transform: translateX(100%);
   transition: transform 1s;
+  > div {
+    padding: 6rem 4rem;
+  }
   &.preview-open {
     .portfolio {
       opacity: 0;
@@ -343,11 +369,13 @@ a {
 .portfolio {
   display: flex;
   max-width: 1200px;
-  padding: 6rem 4rem;
   transition: opacity 1s;
   > div {
     position: relative;
     width: 30%;
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
@@ -360,31 +388,55 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: opacity .4s;
 }
 
-.portfolio__preview {
+// .portfolio__preview {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   padding: 4rem;
+//   top: 50%;
+//   left: 50%;
+//   width: 80vw;
+//   height: 80vh;
+//   transform: translate(-50%, -50%);
+//   border: none;
+//   opacity: 0;
+//   transition: opacity 1s;
+//   > iframe {
+//     border: 0;
+//   }
+// }
+
+.arrow-back {
+  width: 5%;
+}
+
+
+.portfolio-tile {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: opacity .4s;
+  > a {
+    color: black;
+  }
+  &:hover {
+    .porfolio__image {
+      opacity: .22;
+    }
+    .portfolio__description {
+      opacity: 1;
+    }
+  }
+}
+
+.portfolio__description {
+  opacity: 0;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 4rem;
   top: 50%;
   left: 50%;
-  width: 80vw;
-  heigth: 80vh;
-  height: 80vh;
   transform: translate(-50%, -50%);
-  border: none;
-  opacity: 0;
-  transition: opacity 1s;
-  > iframe {
-    border: 0;
-  }
+  transition: opacity .4s;
 }
-
-.icon-arrow-back {
-  background-image: url('images/arrow-back.png');
-  @include retina {
-    background-image: url('images/arrow-back@2x.png');
-  }
-}
-

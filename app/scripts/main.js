@@ -5,11 +5,13 @@ $(document).ready(function() {
   $('.js-greeting-who').mouseout(() => {
     $('.hero__about').removeClass('hover-who')
   })
-  $('.js-greeting-what').click(() => {
-    $('.hero').addClass('portfolio-open')
-  })
   $('.js-portfolio-tile').mouseover(() => {
     $('.hero__portfolio').addClass('preview-open')
   })
-
+  $('.js-greeting-what').click(() => {
+    $('.hero').addClass('portfolio-open')
+  })
+  $('.js-portfolio-back').click(() => {
+    $('.hero').removeClass('portfolio-open')
+  })
 })
