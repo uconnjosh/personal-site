@@ -55,6 +55,14 @@ a {
   }
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -397,6 +405,10 @@ a {
   width: 60px;
 }
 
+.arrow-forward {
+  width: 34px;
+}
+
 .arrow-back-down {
   transform: translateY(-50%) rotate(90deg);
 }
@@ -435,4 +447,5 @@ a {
   font-size: 1.4rem;
   letter-spacing: 1.2px;
   line-height: 2;
+  padding-bottom: 100px;
 }
