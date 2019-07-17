@@ -89,20 +89,6 @@ a {
   background-color: #dfe6e9;
   color: #2d3436;
   overflow: hidden;
-  &.portfolio-open {
-    .hero__portfolio {
-      transform: translateX(0);
-    }
-  }
-}
-
-#hero__image {
-  height: 100%;
-  width: 100%;
-  background-image: url("../images/cannon-beach.jpg");
-  background-size: cover;
-  backgournd-repeat: no-repeat;
-  background-position: center;
 }
 
 .hero__social {
@@ -301,51 +287,53 @@ a {
   margin-bottom: 4rem;
 }
 
+.footer__back {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 0 6rem 4rem;
+  cursor: pointer;
+}
+
 .hero__about {
   position: absolute;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-  &.hover-who {
-    .polaroid {
-      opacity: 1;
-    }
-    .greeting {
-      opacity: 0;
-    }
-  }
 }
-.hero__portfolio {
+
+.hero__details {
   position: absolute;
   background-color: #dfe6e9;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-  transform: translateX(100%);
   transition: transform 1s;
-  > div {
+  overflow: auto;
+  > .details__inner {
     padding: 6rem 4rem;
-  }
-  &.preview-open {
-    .portfolio {
-      opacity: 0;
-    }
-    .portfolio__preview {
-      opacity: 1;
-    }
   }
 }
 
+.transform-right-100 {
+  transform: translateX(100%);
+}
+
+.transform-up-100 {
+  transform: translateY(-100%);
+}
+
+.transform-0 {
+  transform: translate(0, 0);
+}
+
 .polaroid {
-  position: absolute;
+  position: relative;
   width: 220px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 1s;
+  margin: 0 auto;
 }
  
 .polaroid img {
@@ -391,26 +379,12 @@ a {
   transition: opacity .4s;
 }
 
-// .portfolio__preview {
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   padding: 4rem;
-//   top: 50%;
-//   left: 50%;
-//   width: 80vw;
-//   height: 80vh;
-//   transform: translate(-50%, -50%);
-//   border: none;
-//   opacity: 0;
-//   transition: opacity 1s;
-//   > iframe {
-//     border: 0;
-//   }
-// }
-
 .arrow-back {
   width: 5%;
+}
+
+.arrow-back-down {
+  transform: rotate(-90deg);
 }
 
 
@@ -439,4 +413,12 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: opacity .4s;
+}
+
+.bio-text {
+  max-width: 800px;
+  margin: 4rem auto;
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+  line-height: 2;
 }

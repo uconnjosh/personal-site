@@ -1,17 +1,11 @@
 $(document).ready(function() {
-  $('.js-greeting-who').mouseover(() => {
-    $('.hero__about').addClass('hover-who')
-  })
-  $('.js-greeting-who').mouseout(() => {
-    $('.hero__about').removeClass('hover-who')
-  })
-  $('.js-portfolio-tile').mouseover(() => {
-    $('.hero__portfolio').addClass('preview-open')
-  })
   $('.js-greeting-what').click(() => {
-    $('.hero').addClass('portfolio-open')
+    $('.js-hero-portfolio').addClass('transform-0')
   })
-  $('.js-portfolio-back').click(() => {
-    $('.hero').removeClass('portfolio-open')
+  $('.js-greeting-who').click(() => {
+    $('.js-bio').addClass('transform-0')
+  })
+  $('.js-back').click(() => {
+    $('.hero__details').removeClass('transform-0')
   })
 })
