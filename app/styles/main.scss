@@ -282,18 +282,25 @@ a {
   }
 }
 
-.header__back {
+.button__back {
+  position: absolute;
+  background-color: gray;
+  padding: 2.2rem 0 2.2rem 4rem;
   cursor: pointer;
-  margin-bottom: 4rem;
+}
+
+.header__back {
+  @extend .button__back;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .footer__back {
-  position: absolute;
+  @extend .button__back;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 0 0 6rem 4rem;
-  cursor: pointer;
 }
 
 .hero__about {
@@ -312,9 +319,12 @@ a {
   top: 0;
   left: 0;
   transition: transform 1s;
-  overflow: auto;
+  // overflow: auto;
+  overflow: hidden;
   > .details__inner {
-    padding: 6rem 4rem;
+    height: 100vh;
+    overflow: auto;
+    padding: 3rem 5rem;
   }
 }
 
@@ -358,6 +368,7 @@ a {
   display: flex;
   max-width: 1200px;
   transition: opacity 1s;
+  padding-top: 7rem;
   > div {
     position: relative;
     width: 30%;
@@ -380,11 +391,14 @@ a {
 }
 
 .arrow-back {
-  width: 5%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
 }
 
 .arrow-back-down {
-  transform: rotate(-90deg);
+  transform: translateY(-50%) rotate(90deg);
 }
 
 
