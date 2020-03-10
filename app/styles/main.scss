@@ -185,36 +185,12 @@ a {
 .resume__header {
   cursor: pointer;
   font-size: 2em;
-  padding-bottom: .2cm;
+  padding-bottom: .5cm;
   @media print {
     background-color: white;
     font-size: 1em;
     padding: 0;
     font-style: italic;
-  }
-}
-
-#resume--skills {
-  .resume__header {
-    background-color: $color-cornflower-blue;
-  }
-}
-
-#resume--employment {
-  .resume__header {
-    background-color: $color-almond;
-  }
-}
-
-#resume--projects {
-  .resume__header {
-    background-color: $color-nutmeg;
-  }
-}
-
-#resume--education {
-  .resume__header {
-    background-color: $color-pale-leaf;
   }
 }
 

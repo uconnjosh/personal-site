@@ -3,6 +3,18 @@
 
 @import 'variables';
 
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -12,17 +24,20 @@
 
 body {
   background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   color: #333;
   font-size: 12px;
   margin: 0;
   box-sizing: border-box;
+  @include mobile {
+    font-size: 8px;
+  }
 }
 
-h1, h2, h3, h4, h4, ul, li, p {
-  margin: 0;
-  padding: 0;
-}
+// h1, h2, h3, h4, h4, ul, li, p {
+//   margin: 0;
+//   padding: 0;
+// }
 
 h1 {
   font-size: 6em;
@@ -43,6 +58,32 @@ a {
   }
 }
 
+.mobile-hidden {
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.color-blue {
+  color: blue;
+}
+
+.spacer-square {
+  padding-bottom: 100%;
+}
+
 .screen {
   @media print {
     display: none;
@@ -55,37 +96,36 @@ a {
   }
 }
 
+.typical-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .hero {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: $color-sand;
-  color: #3b3a36;
-}
-
-#hero__image {
-  height: 100%;
-  width: 100%;
-  background-image: url("../images/cannon-beach.jpg");
-  background-size: cover;
-  backgournd-repeat: no-repeat;
-  background-position: center;
+  background-color: #dfe6e9;
+  color: #2d3436;
+  overflow: hidden;
 }
 
 .hero__social {
   position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
   top: 16px;
   right: 16px;
-  a {
-    margin: 0 4px;
+  > * {
+    margin: 0 8px;
     vertical-align: middle;
     img {
       width: 30px;
     }
   }
 }
-
-
 
 .main {
   margin: 25px;
@@ -138,10 +178,14 @@ a {
   border-radius: 500px;
 }
 
+.resume__section {
+  margin-bottom: .5cm;
+}
+
 .resume__header {
   cursor: pointer;
   font-size: 2em;
-  padding: 22px;
+  padding-bottom: .2cm;
   @media print {
     background-color: white;
     font-size: 1em;
@@ -178,7 +222,7 @@ a {
   opacity: 1;
   max-height: 0;
   overflow: hidden;
-  transition: max-height .4s;
+  transition: max-height 1s;
   a {
     color: black;
   }
@@ -195,16 +239,19 @@ a {
 .resume__detail {
   display: flex;
   justify-content: space-between;
-  padding: 12px;
+  align-items: flex-start;
+  padding: 6px;
 }
 
-.detail__list {
-  margin-left: 40px;
+.resume-option {
+  display: inline;
+  text-decoration: underline;
+  margin: 0;
 }
 
 .detail__description {
   p {
-    padding-bottom: 1em;
+    margin-top: 0;
   }
 }
 
@@ -220,10 +267,44 @@ a {
 
 .greeting {
   position: absolute;
-  text-align: center;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%); 
+  top: 50%;
+  left: 12%;
+  transform: translateY(-50%);
+  transition: opacity 1s;
+  > * {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    @include mobile {
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      font-size: .9rem;
+    }
+  }
+  @include mobile {
+    position: static;
+    transform: none;
+    padding: 90px 18px 0 18px;
+    left: 4%;
+    > h2 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.greeting__label {
+  display: flex;
+  justify-content: space-between;
+  min-width: 110px;
+  margin-right: 10px;
+  @include mobile {
+    min-width: 50px;
+  }
+}
+
+.interactive {
+  cursor: pointer;
 }
 
 .header__name {
@@ -237,5 +318,180 @@ a {
     h2 {
       font-size: 1.4em;  
     }
+  }
+}
+
+.button__back {
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+  padding: 2.2rem 0 2.2rem 1rem;
+  cursor: pointer;
+}
+
+.header__back {
+  @extend .button__back;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer__back {
+  @extend .button__back;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.hero__about {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.hero__details {
+  position: absolute;
+  background-color: #dfe6e9;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  transition: transform 1s;
+  > .details__inner {
+    height: 100vh;
+    overflow: auto;
+    padding: 6rem 5rem 0 5rem;
+    @include mobile {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+}
+
+.transform-right-100 {
+  transform: translateX(100%);
+}
+
+.transform-up-100 {
+  transform: translateY(-100%);
+}
+
+.transform-0 {
+  transform: translate(0, 0);
+}
+
+.polaroid {
+  position: relative;
+  width: 220px;
+  margin: 0 auto;
+}
+ 
+.polaroid img {
+  width: 100%;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+ 
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
+}
+
+.portfolio {
+  display: flex;
+  max-width: 1200px;
+  transition: opacity 1s;
+  > div {
+    position: relative;
+    width: 30%;
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.porfolio__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity .4s;
+}
+
+.arrow-back {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+}
+
+.arrow-forward {
+  width: 34px;
+}
+
+.arrow-back-down {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+
+.portfolio-tile {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: opacity .4s;
+  > a {
+    color: black;
+  }
+  &:hover {
+    .porfolio__image {
+      opacity: .22;
+    }
+    .portfolio__description {
+      opacity: 1;
+    }
+  }
+}
+
+.portfolio__description {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity .4s;
+}
+
+.bio-text {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding-bottom: 100px;
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+  line-height: 2;
+}
+
+.resume-print-button {
+  font-size: 1rem;
+  text-align: center;
+  border-style: solid;
+  border-width: thin;
+  border-color: blue;
+  color: blue;
+  padding: 6px;
+  @include mobile {
+    font-size: .8rem;
   }
 }
