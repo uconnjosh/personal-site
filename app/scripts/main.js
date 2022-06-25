@@ -1,19 +1,19 @@
 $(document).ready(function() {
 	route()
-  $('.js-greeting-what').click(() => {
-  	window.location.hash = 'portfolio';
-  })
-  $('.js-greeting-who').click(() => {
-  	window.location.hash = 'bio';
-  })
-  $('.js-back').click(() => {
-  	window.location.hash = '';
-  })
+	$('.js-greeting-what').click(function() {
+		window.location.hash = 'portfolio';
+	})
+	$('.js-greeting-who').click(function() {
+		window.location.hash = 'bio';
+	})
+	$('.js-back').click(function() {
+		window.location.hash = '';
+	})
   $(window).on('hashchange', function (e) {
   	route();
 	});
 	function route() {
-		const hash = window.location.hash
+		var hash = window.location.hash
   	
   	switch(hash) {
 		  case '#portfolio':
