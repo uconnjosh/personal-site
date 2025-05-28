@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Josh Paul</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #dfe6e9;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #333;
+      font-size: 12px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 500px) {
+	    body {
+		    font-size: 8px;
+	    }
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      @media print {
+        padding: 0;
+      }
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      margin: 2rem 0;
+    }
+
+  .browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+  }
+
+ h1 {
+	 font-size: 6em;
+}
+ h2 {
+	 font-size: 2.6em;
+}
+ h3 {
+	 font-size: 2em;
+}
+ a {
+	 text-decoration: none;
+}
+ a:visited {
+	 color: blue;
+}
+ @media screen and (max-width: 500px) {
+	 .mobile-hidden {
+		 display: none;
+	}
+}
+ .flex {
+	 display: flex;
+}
+ .flex-align-center {
+	 align-items: center;
+}
+ .cursor-pointer {
+	 cursor: pointer;
+}
+ .color-blue {
+	 color: blue;
+}
+ .spacer-square {
+	 padding-bottom: 100%;
+}
+ @media print {
+	 .screen {
+		 display: none;
+	}
+}
+ @media screen {
+	 .print {
+		 display: none;
+	}
+}
+ .typical-background {
+	 background-size: cover;
+	 background-position: center;
+	 background-repeat: no-repeat;
+}
+ .hero {
+	 position: relative;
+	 height: 100vh;
+	 width: 100%;
+	 background-color: #dfe6e9;
+	 color: #2d3436;
+	 overflow: hidden;
+}
+ .hero__social {
+	 position: absolute;
+	 z-index: 2;
+	 display: flex;
+	 align-items: center;
+	 top: 16px;
+	 right: 16px;
+}
+ .hero__social > * {
+	 margin: 0 8px;
+	 vertical-align: middle;
+}
+ .hero__social > * img {
+	 width: 30px;
+}
+ .main {
+	 margin: 25px;
+}
+.resume {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+ .resume h2 {
+	 display: inline-block;
+}
+ .section__inner {
+	 margin: 12px;
+}
+ .section__about {
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+}
+ @media screen and (max-width: 650px) {
+	 .section__about {
+		 flex-direction: column;
+	}
+	 .section__about > div {
+		 width: 90%;
+	}
+}
+ .contact__icon {
+	 vertical-align: middle;
+	 margin-right: 6px;
+}
+ .about__text {
+	 width: 70%;
+}
+ .about__text > p {
+	 font-size: 1.4em;
+}
+ .about__pic {
+	 width: 25%;
+}
+ .about__pic img {
+	 width: 100%;
+}
+ .avatar-pic {
+	 float: left;
+	 width: 75px;
+	 border-radius: 500px;
+}
+ .resume__section {
+	 margin-bottom: 0.5cm;
+}
+ .resume__header {
+	 font-size: 1.6em;
+	 padding-bottom: 0.5cm;
+}
+ @media print {
+	 .resume__header {
+		 background-color: white;
+		 font-size: 1em;
+		 padding: 0;
+		 font-style: italic;
+	}
+}
+ .resume__details {
+	 opacity: 1;
+	 max-height: 0;
+	 overflow: hidden;
+	 transition: max-height 1s;
+}
+ .resume__details a {
+	 color: black;
+}
+ .resume__title {
+	 text-align: center;
+	 padding-bottom: 1.4em;
+}
+ .resume__title p {
+	 margin: 4px;
+}
+ .resume__detail {
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: flex-start;
+	 padding: 6px;
+}
+ .resume-option {
+	 display: inline;
+	 text-decoration: underline;
+	 margin: 0;
+}
+
+.detail__date {
+  width: 4cm;
+  text-align: right;
+}
+
+.detail__description p {
+	 margin-top: 0;
+}
+ .resume__list {
+	 font-size: 1.2em;
+	 margin: 0 auto;
+}
+ .resume__list li {
+	 display: inline-block;
+	 margin: 8px;
+}
+ .greeting {
+	 position: absolute;
+	 top: 50%;
+	 left: 12%;
+	 transform: translateY(-50%);
+	 transition: opacity 1s;
+}
+ .greeting > * {
+	 font-size: 2rem;
+	 margin-bottom: 1rem;
+	 display: flex;
+	 align-items: center;
+}
+ @media screen and (max-width: 500px) {
+	 .greeting > * {
+		 justify-content: space-between;
+		 margin-bottom: 2rem;
+		 font-size: 0.9rem;
+	}
+}
+ @media screen and (max-width: 500px) {
+	 .greeting {
+		 position: static;
+		 transform: none;
+		 padding: 90px 18px 0 18px;
+		 left: 4%;
+	}
+	 .greeting > h2 {
+		 font-size: 1.2rem;
+	}
+}
+ .greeting__label {
+	 display: flex;
+	 justify-content: space-between;
+	 min-width: 110px;
+	 margin-right: 10px;
+}
+ @media screen and (max-width: 500px) {
+	 .greeting__label {
+		 min-width: 50px;
+	}
+}
+ .interactive {
+	 cursor: pointer;
+}
+ .header__name {
+	 position: absolute;
+	 opacity: 0;
+	 left: 50%;
+	 transform: translateX(-50%);
+	 bottom: 1vh;
+	 transition: opacity 0.8s ease-in;
+}
+ @media screen and (max-height: 418px) {
+	 .header__name h2 {
+		 font-size: 1.4em;
+	}
+}
+ .button__back, .header__back, .footer__back {
+	 position: fixed;
+	 z-index: 2;
+	 background-color: white;
+	 padding: 2.2rem 0 2.2rem 1rem;
+	 cursor: pointer;
+}
+ .header__back {
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+}
+ .footer__back {
+	 bottom: 0;
+	 left: 0;
+	 width: 100%;
+}
+ .hero__about {
+	 position: absolute;
+	 width: 100%;
+	 height: 100vh;
+	 top: 0;
+	 left: 0;
+}
+ .hero__details {
+	 position: absolute;
+	 background-color: #dfe6e9;
+	 width: 100%;
+	 min-height: 100vh;
+	 top: 0;
+	 left: 0;
+	 transition: transform 1s;
+}
+ .hero__details > .details__inner {
+	 height: 100vh;
+	 overflow: auto;
+	 padding: 6rem 5rem 0 5rem;
+}
+ @media screen and (max-width: 500px) {
+	 .hero__details > .details__inner {
+		 padding-left: 1.5rem;
+		 padding-right: 1.5rem;
+	}
+}
+ .transform-right-100 {
+	 transform: translateX(100%);
+}
+ .transform-up-100 {
+	 transform: translateY(-100%);
+}
+ .transform-0 {
+	 transform: translate(0, 0);
+}
+ .polaroid {
+	 position: relative;
+	 width: 220px;
+	 margin: 0 auto;
+}
+ .polaroid img {
+	 width: 100%;
+	 border: 10px solid #fff;
+	 border-bottom: 45px solid #fff;
+	 -webkit-box-shadow: 3px 3px 3px #777;
+	 -moz-box-shadow: 3px 3px 3px #777;
+	 box-shadow: 3px 3px 3px #777;
+}
+ .polaroid p {
+	 position: absolute;
+	 text-align: center;
+	 width: 100%;
+	 bottom: 0px;
+	 font: 400 18px 'Kaushan Script', cursive;
+	 color: #888;
+}
+ .portfolio {
+	 display: flex;
+	 max-width: 1200px;
+	 transition: opacity 1s;
+}
+ .portfolio > div {
+	 position: relative;
+	 width: 30%;
+}
+ @media screen and (max-width: 500px) {
+	 .portfolio > div {
+		 width: 100%;
+	}
+}
+ .porfolio__image {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 top: 0;
+	 left: 0;
+	 background-position: center;
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 transition: opacity 0.4s;
+}
+ .arrow-back {
+	 position: absolute;
+	 top: 50%;
+	 transform: translateY(-50%);
+	 width: 60px;
+}
+ .arrow-forward {
+	 width: 34px;
+}
+ .arrow-back-down {
+	 transform: translateY(-50%) rotate(90deg);
+}
+ .portfolio-tile {
+	 cursor: pointer;
+	 position: relative;
+	 display: inline-block;
+	 transition: opacity 0.4s;
+}
+ .portfolio-tile > a {
+	 color: black;
+}
+ .portfolio-tile:hover .porfolio__image {
+	 opacity: 0.22;
+}
+ .portfolio-tile:hover .portfolio__description {
+	 opacity: 1;
+}
+ .portfolio__description {
+	 opacity: 0;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+	 transition: opacity 0.4s;
+}
+ .bio-text {
+	 max-width: 800px;
+	 margin: 4rem auto;
+	 padding-bottom: 100px;
+	 font-size: 1.4rem;
+	 letter-spacing: 1.2px;
+	 line-height: 2;
+}
+ .resume-print-button {
+	 font-size: 1rem;
+	 text-align: center;
+	 border-style: solid;
+	 border-width: thin;
+	 border-color: blue;
+	 color: blue;
+	 padding: 6px;
+}
+ @media screen and (max-width: 500px) {
+	 .resume-print-button {
+		 font-size: 0.8rem;
+	}
+}
+ 
+  </style>
+</head>
+<body>
+
+  <header
+    class="screen"
+    style="padding-top: 80px;"
+  >
+    <h2 style="margin-bottom: 0;">Josh Paul</h2>
+    <p style="font-size: 1.2rem; margin-top: 12px;">🗽 NYC-Based Software Developer</p>
+    <div class="hero__social">
+      <div class="resume-print-button">
+        <a
+          href="javascript:window.print()"
+          class="resume-option"
+        >
+          print
+        </a>
+        /
+        <a
+          download
+          target="_blank"
+          class="resume-option"
+          href="joshua_paul_resume_may_2025.pdf"
+        >
+          download
+        </a>
+        résumé
+      </div>
+
+      <a 
+        href="https://github.com/uconnjosh"
+        target="_blank"
+      >
+        <img src="images/github.png" />
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/jpaul4/"
+        target="_blank"
+      >
+        <img src="images/linkedin.png" />
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- <section>
+      <h2>About Me</h2>
+      <p>I’m a software developer with 10+ years of experience in Ruby on Rails, JavaScript, and building tools for small businesses. Currently working on <strong>Storksbill</strong>, a trip planner for travel professionals.</p>
+    </section> -->
+
+    <section>
+      <div class="resume">
+          <div class="resume__title">
+            <p>Joshua Paul</p>
+            <p>15 Cooper Street #3B | Brooklyn, NY 11207</p>
+            <p>860-336-1346 | josh4044@gmail.com</p>
+          </div>
+          <div class="section__inner">
+            <div class="resume__section" id="resume--skills">
+              <div class="resume__header">Skills</div>
+              <div>
+                <div class="resume__detail">
+                  <!-- TODO: a fancier list with some sort of indicator of strength for each of these skills -->
+                  <ul class="resume__list">
+                    <li>Rails</li>
+                    <li>Ember.js</li>
+                    <li>PostgreSQL</li>
+                    <li>Adobe Sign API</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="resume__section" id="resume--employment">
+              <div class="resume__header">Employment</div>
+              <div>
+                <div class="resume__detail">
+                  <div class="detail__description">
+                    <p><strong>TBWA\Media Arts Lab</strong>, Los Angeles, CA | Full Stack Software Engineer, Marketing Operations</p>
+                    <ul class="detail__list">
+                      <li>Streamline workflows by replacing legacy Excel and email-based processes with web-based tools.</li>
+                      <li>Interface with external systems to facilitate business compliance.</li>
+                      <li>Provide support for ad teams across the globe.</li>
+                    </ul>
+                  </div>
+                  <div class="detail__date">
+                    September 2019 - Present
+                  </div>
+                </div>
+                <!-- <div class="resume__detail">
+                  <div class="detail__description">
+                    <p>Contract Web Developer, <strong>Los Angeles, CA</strong></p>
+                    <ul class="detail__list">
+                      <li>Implemented and successfully launched new Shopify theme</li>
+                    </ul>
+                  </div>
+                  <div class="detail__date">
+                    June 2019 - August 2019
+                  </div>
+                </div> -->
+                <div class="resume__detail">
+                  <div class="detail__description">
+                    <p><strong>BOND Creative</strong>, Los Angeles, CA | Front End Web Developer</p>
+                    <ul class="detail__list">
+                      <li>Produced high fidelity web marketing assets for movie and video game studios.</li>
+                      <li>Built features for an in-house project management web app.</li>
+                    </ul>
+                  </div>
+                  <div class="detail__date">
+                    July 2017 - June 2019
+                  </div>
+                </div>
+                <div class="resume__detail">
+                  <div class="detail__description">
+                    <p><strong>FocusVision</strong>, Portland, OR | Full Stack Software Engineer</p>
+                    <ul class="detail__list">
+                      <li>
+                        Collaborated with research teams to develop and support web platforms for qualitative and quantitative market analysis.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="detail__date">
+                    July 2014 - July 2017
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="resume__section" id="resume--education">
+              <div class="resume__header">Education</div>
+              <div>
+                <div class="resume__detail">
+                  <div class="detail__description">
+                    <p><strong>University of Connecticut, Storrs, CT</strong> | Bachelor of Science in Business</p>
+                  </div>
+                  <div class="detail__date">
+                    December 2013
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+</body>
+</html>
