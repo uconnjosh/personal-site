@@ -35,6 +35,7 @@
       border-radius: 8px;
       @media print {
         padding: 0;
+				box-shadow: none;
       }
     }
 
@@ -199,15 +200,15 @@
 }
  .resume__header {
 	 font-size: 1.6em;
-	 padding-bottom: 0.5cm;
+	 padding-bottom: 0.25cm;
 }
- @media print {
+ /* @media print {
 	 .resume__header {
 		 background-color: white;
 		 font-size: 1em;
 		 padding: 0;
 		 font-style: italic;
-	}
+	} */
 }
  .resume__details {
 	 opacity: 1;
@@ -491,7 +492,7 @@
           download
           target="_blank"
           class="resume-option"
-          href="joshua_paul_resume_may_2025.pdf"
+          href="josh_paul_resume_jan_2026.pdf"
         >
           download
         </a>
@@ -532,14 +533,19 @@
             <div class="resume__section" id="resume--skills">
               <div class="resume__header">Skills</div>
               <div>
-                <div class="resume__detail">
-                  <!-- TODO: a fancier list with some sort of indicator of strength for each of these skills -->
-                  <ul class="resume__list">
-                    <li>Rails</li>
-                    <li>Ember.js</li>
-                    <li>PostgreSQL</li>
-                    <li>Adobe Sign API</li>
-                  </ul>
+                <div>
+									<p><strong>Backend & Data</strong></p>
+									<div>
+										Ruby on Rails · PostgreSQL · SQL Views · Data modeling · Background jobs
+									</div>
+									<p><strong>Frontend</strong></p>
+									<div>
+										Ember.js (Octane) · Complex form & workflow UIs · Excel & PDF report generation
+									</div>
+									<p><strong>Workflow & Integration</strong></p>
+									<div>
+										Adobe Acrobat Sign API · External system integrations · State-driven workflows · Approval & gating systems · Email-based automation
+									</div>
                 </div>
               </div>
             </div>
@@ -548,15 +554,30 @@
               <div>
                 <div class="resume__detail">
                   <div class="detail__description">
-                    <p><strong>TBWA\Media Arts Lab</strong>, Los Angeles, CA | Full Stack Software Engineer, Marketing Operations</p>
+                    <p><strong>TBWA\Media Arts Lab</strong>, Los Angeles, CA | Full Stack Software Engineer</p>
                     <ul class="detail__list">
-                      <li>Streamline workflows by replacing legacy Excel and email-based processes with web-based tools.</li>
-                      <li>Interface with external systems to facilitate business compliance.</li>
-                      <li>Provide support for ad teams across the globe.</li>
+											<li>
+												Built and owned internal budgeting, finance, and compliance workflows on the Marketing Operations team.
+											</li>
+                      <li>
+												Architected and maintained a centralized budget management and reporting platform used across multiple international offices, replacing Excel and email workflows and serving as the system of record for Apple advertising productions.
+											</li>
+                      <li>
+												Built a web-based spreadsheet and state-driven workflow enabling advertising producers to create, revise, and submit campaign budgets across global regions.
+											</li>
+                      <li>
+												Implemented a controlled budget workflow that acts as the gatekeeper for finance and client reporting, ensuring only approved revisions propagate into official data.
+											</li>
+											<li>
+												Maintained and extended Adobe Acrobat Sign API integrations to support NDA and disclosure workflows across many localized document variants.
+											</li>
+											<li>
+												Provided technical support for production, and finance teams around the world.
+											</li>
                     </ul>
                   </div>
-                  <div class="detail__date">
-                    September 2019 - Present
+                  <div class="detail__date" style="width: 8cm;">
+                    Sept. 2019 - Present
                   </div>
                 </div>
                 <!-- <div class="resume__detail">
