@@ -230,7 +230,12 @@
 	 display: flex;
 	 justify-content: space-between;
 	 align-items: flex-start;
+  gap: 1rem;
 	 padding: 6px;
+}
+ .detail__description {
+  flex: 1;
+  min-width: 0;
 }
  .resume-option {
 	 display: inline;
@@ -239,7 +244,7 @@
 }
 
 .detail__date {
-  width: 4cm;
+  flex: 0 0 10rem;
   text-align: right;
 }
 
@@ -468,7 +473,31 @@
 		 font-size: 0.8rem;
 	}
 }
- 
+
+ @media screen and (max-width: 650px) {
+  .resume {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .resume__detail {
+    flex-direction: column;
+    gap: 0;
+  }
+  .detail__date {
+    flex: none;
+    width: auto !important;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+ }
+ @media print {
+  .resume__header {
+    break-after: avoid;
+  }
+  .resume__detail {
+    break-inside: avoid;
+  }
+ }
   </style>
 </head>
 <body>
@@ -492,7 +521,7 @@
           download
           target="_blank"
           class="resume-option"
-          href="joshua_paul_resume_9_21_26.pdf"
+          href="joshua_paul_resume_11_08_26.pdf"
         >
           download
         </a>
@@ -530,27 +559,21 @@
             <p><a href="mailto:josh4044@gmail.com">josh4044@gmail.com</a></p>
           </div>
           <div class="section__inner">
-            <div class="resume__section" id="resume--skills">
-              <div class="resume__header">Skills</div>
-              <div>
-                <div>
-									<p><strong>Backend & Data</strong></p>
-									<div>
-										Ruby on Rails · PostgreSQL · SQL Views · Data modeling · Background jobs
-									</div>
-									<p><strong>Frontend</strong></p>
-									<div>
-										Ember.js · React · Excel & PDF report generation
-									</div>
-									<p><strong>Workflow & Integration</strong></p>
-									<div>
-										Salesforce Administration ·Adobe Acrobat Sign API · BOX API · State-driven workflows · Approval & gating systems · Email-based automation
-									</div>
+            <div class="resume__section" id="resume--project">
+              <div class="resume__header">Selected Project</div>
+              <div class="resume__detail">
+                <div class="detail__description">
+                  <p><strong><a href="https://flyers.nyc">Flyers.nyc</a></strong> | Creator &amp; Developer</p>
+                  <ul class="detail__list">
+										<li>Built and deployed a platform for discovering and sharing digitized street flyers across NYC neighborhoods, spanning a Ruby on Rails API, PostgreSQL database, Ember.js web application, and native SwiftUI iOS app.</li>
+                    <li>Implemented semantic search using on-device OCR to extract flyer text, OpenAI embeddings to vectorize flyer content and search queries, and pgvector to retrieve relevant results.</li>
+                    <li>Shipped account verification, photo uploads, content moderation, reporting, and blocking; manage deployment and App Store distribution.</li>
+                  </ul>
                 </div>
               </div>
             </div>
             <div class="resume__section" id="resume--employment">
-              <div class="resume__header">Employment</div>
+              <div class="resume__header">Professional Experience</div>
               <div>
 								<div class="resume__detail">
 									<div class="detail__description">
@@ -587,27 +610,10 @@
                   <div class="detail__description">
                     <p><strong>TBWA\Media Arts Lab</strong>, Los Angeles, CA | Full Stack Software Engineer</p>
                     <ul class="detail__list">
-											<li>
-												Built and owned internal budgeting, finance, and compliance workflows on the Marketing Operations team.
-											</li>
-                      <li>
-												Architected and maintained a centralized budget management and reporting platform used across multiple international offices, replacing Excel and email workflows and serving as the system of record for Apple advertising productions.
-											</li>
-                      <li>
-												Built a web-based spreadsheet and state-driven workflow enabling advertising producers to create, revise, and submit campaign budgets across global regions.
-											</li>
-                      <li>
-												Implemented a controlled budget workflow that acts as the gatekeeper for finance and client reporting, ensuring only approved revisions propagate into official data.
-											</li>
-											<li>
-												Maintained ETL pipeline syncing financial estimate data from Microsoft Dynamics (D365) into Rails application, troubleshooting data quality issues to ensure accurate client reporting.
-											</li>
-											<li>
-												Maintained and extended Adobe Acrobat Sign API integrations to support NDA and disclosure workflows across many localized document variants.
-											</li>
-											<li>
-												Provided technical support for production, and finance teams around the world.
-											</li>
+                      <li>Built and owned a Ruby on Rails, Ember.js, and PostgreSQL platform for budgeting, finance, and compliance across multiple international offices, replacing Excel and email workflows and serving as the system of record for Apple advertising production budgets.</li>
+                      <li>Developed a web-based budgeting spreadsheet and approval workflow, ensuring only approved budget revisions flowed into official finance and client reporting.</li>
+                      <li>Maintained an ETL pipeline syncing financial estimate data from Microsoft Dynamics 365 into the Rails application, troubleshooting data quality issues to support accurate client reporting.</li>
+                      <li>Maintained and extended Adobe Acrobat Sign API integrations for NDA and disclosure workflows across localized document variants, and supported production and finance teams worldwide.</li>
                     </ul>
                   </div>
                   <div class="detail__date" style="width: 8cm;">
